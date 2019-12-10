@@ -9,8 +9,7 @@ const StyledForm = styled.div`
 `;
 
 const StyledContainer = styled.div`
-    padding: 8px 14px 8px 14px;
-
+    padding: 8px 14px 8px 8px;
     background-color: #fafafa;
     display: flex;
     flex-direction: row;
@@ -22,7 +21,7 @@ const StyledSearchBar = styled.input`
     outline: none;
     border: none;
     border-radius: 8px;
-    font-size: 1.5em;
+    font-size: 1em;
     flex: 1;
     background-color: #fafafa;
 `;
@@ -30,7 +29,9 @@ const StyledSearchBar = styled.input`
 const StyledSearchIcon = styled.span`
     font-size: 1em;
     color: #1c1c1c;
+    padding-right: .5em;
     margin-right: .5em;
+    border-right: 1px solid #ccc;
 `;
 
 const SearchBar = () => {
