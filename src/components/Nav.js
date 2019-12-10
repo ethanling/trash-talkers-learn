@@ -12,7 +12,7 @@ const StyledNav = styled.div`
 	padding: 7px 0 7px 0;
 	align-items: center;
 	position: sticky;
-	bottom: 0;
+	bottom: -2px;
 	border-top: 1px solid #000;
 `;
 
