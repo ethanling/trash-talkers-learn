@@ -34,7 +34,8 @@ const StyledLink = styled(Link)`
 	border-radius: 8px;
 	text-decoration: none;
 	transition: all .15s ease;
-
+	height: 51px;
+	
 	:hover {
 		cursor: pointer;
 		background-color: #464646;

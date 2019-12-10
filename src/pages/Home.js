@@ -10,7 +10,8 @@ const Home = () => {
 	return (
 		<StyledPageContainer>
 			<Header title="Home" />
-			<ScrollView />
+			<ScrollView team="gold"/>
+			<ScrollView team="green"/>
 		</StyledPageContainer>
 	)
 }

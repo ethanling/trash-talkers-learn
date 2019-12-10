@@ -45,6 +45,9 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledScrollTitle = styled.h2`
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	font-size: .85em;
 	text-transform: uppercase;
     padding-left: 1em;
@@ -100,11 +103,27 @@ const Card = ({ title, description, thumbnail_link }) => {
     );
 }
 
-const ScrollView = () => {
+const ScrollView = ({ videos, team }) => {
+
+	const StyledTeamLabel = styled.span`
+		font-size: .7em;
+		${team === 'gold' ? ('background-color: yellow;') : ('background-color: green;')}
+		padding: 5px 8px 5px 8px;	
+		margin-left: 1em;
+		border-radius: 4px;
+		color: #1d1d1d;
+		font-weight: bold;
+	`;
+
 	return (
 		<StyledWrapper>
 			<StyledScrollTitle>
 				Recently Added
+				{ team === 'gold' ? (
+					<StyledTeamLabel>Gold Team</StyledTeamLabel>		
+				) : (
+					<StyledTeamLabel>Green Team</StyledTeamLabel>
+				)}
 			</StyledScrollTitle>
 			<StyledScrollView>
                 { testArr.map(card => (

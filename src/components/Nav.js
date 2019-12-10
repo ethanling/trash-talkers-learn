@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledNav = styled.div`
+	min-height: 65px;
 	width: 100vw;
 	z-index: 10;
 	background: #303030;
