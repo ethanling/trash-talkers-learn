@@ -9,7 +9,13 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
+    background: #1c1c1c;
+    background: linear-gradient(
+        180deg,
+        rgba(73, 73, 73, 1) 0%,
+        rgba(27, 27, 27, 100) 72%
+    );
 }
 
 code {

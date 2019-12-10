@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+// Components
 import Header from '../components/Header'
+import SearchBar from '../components/SearchBar';
 // Styles
 import { StyledPageContainer } from '../styles/Global';
 
@@ -8,7 +10,9 @@ import { StyledPageContainer } from '../styles/Global';
 const Search  = () => {
 	return (
 		<StyledPageContainer>
-			<Header title="Search"/>	
+			<Header title="Search"/>
+            <SearchBar />
+            	
 		</StyledPageContainer>
 	)
 }

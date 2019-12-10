@@ -6,5 +6,5 @@ export const StyledPageTitle = styled.h1`
 
 export const StyledPageContainer = styled.div`
 	flex: 1;
-	padding: 0 0 5em 0;
+	padding: 0 0 4em 0;
 `;
