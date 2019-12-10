@@ -11,14 +11,14 @@ import Nav from './components/Nav';
 import { FiHome, FiSearch, FiList } from 'react-icons/fi'
 
 const StyledApp = styled.div`
-	height: 100vh;
-	min-width: 100vw;
-	max-width: 100vw;
-	background: #1C1C1C;
-	color: #FAFAFA;
-	z-index: 0;
-	display: flex;
-	flex-direction: column;
+    height: 100vh;
+    min-width: 100vw;
+    max-width: 100vw;
+    background: #1C1C1C;
+    color: #fafafa;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
 `;
 
 const StyledLink = styled(Link)`
