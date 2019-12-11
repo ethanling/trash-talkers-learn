@@ -27,6 +27,7 @@ const StyledSearchBar = styled.input`
 `;
 
 const StyledSearchIcon = styled.button`
+    background: none;
     font-size: 1em;
     color: #1c1c1c;
     padding: 0 .5em 0 0;

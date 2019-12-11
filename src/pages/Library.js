@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import Header from '../components/Header'
 // Styles
 import { StyledPageContainer } from '../styles/Global'

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 // Components
 import Header from '../components/Header'
 import SearchBar from '../components/SearchBar';
