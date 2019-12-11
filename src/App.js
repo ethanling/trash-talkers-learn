@@ -29,11 +29,7 @@ function App() {
                 <StyledApp>
                     <Switch>
                         <PrivateRoute exact path="/search" component={Search} />
-                        <PrivateRoute
-                            exact
-                            path="/library"
-                            component={Library}
-                        />
+                        <PrivateRoute exact path="/library" component={Library} />
                         <PrivateRoute exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />
                     </Switch>

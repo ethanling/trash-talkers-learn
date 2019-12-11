@@ -4,6 +4,10 @@ import { withRouter, Redirect } from "react-router";
 import appAuth from "../authentication/config.js";
 import { AuthContext } from "../authentication/Auth.js";
 
+const StyledLoginWrapper = styled.div`
+    
+`;
+
 const Login = ({ history }) => {
     const handleLogin = useCallback(
         async event => {

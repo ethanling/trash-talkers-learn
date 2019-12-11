@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiSettings } from 'react-icons/fi'
+import Settings from '../pages/Settings';
 
 const StyledHeader = styled.div`
     display: flex;
@@ -18,7 +19,10 @@ const StyledHeader = styled.div`
     margin-bottom: -8.5em;
 `;
 
-const StyledSettingsIcon = styled.div`
+const StyledSettingsIcon = styled.button`
+    color: #fafafa;
+    background: none;
+    border: none;
 	font-size: 1.5em;
 `;
 
@@ -30,13 +34,18 @@ const StyledTitle = styled.h1`
     background: none;
 `;
 
+
 const Header = ({ title }) => {
-	return (
+    const [toggle, setToggle] = useState(false);
+    const toggleSettings = () => setToggle(!toggle)
+    
+    return (
 		<StyledHeader>
 			<StyledTitle>{ title }</StyledTitle>
-			<StyledSettingsIcon>		
+			<StyledSettingsIcon onClick={toggleSettings}>		
 				<FiSettings />	
 			</StyledSettingsIcon>
+            { toggle ? <Settings toggle={toggleSettings} /> : ('')}
 		</StyledHeader>
 	)
 }
