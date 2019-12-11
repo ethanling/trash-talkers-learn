@@ -85,10 +85,11 @@ const StyledCardTitle = styled.h3`
     font-size: 1em;
 `;
 
-const StyledCardDescription = styled.h3`
+const StyledCardDescription = styled.p`
     margin: 0;
     padding: 0;
-    font-size: 0.8em;
+	font-size: 0.8em;
+	flex: 1;
 `;
 
 const Card = ({ title, description, thumbnail_link }) => {

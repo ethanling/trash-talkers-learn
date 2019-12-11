@@ -26,11 +26,11 @@ const StyledSearchBar = styled.input`
     background-color: #fafafa;
 `;
 
-const StyledSearchIcon = styled.span`
+const StyledSearchIcon = styled.button`
     font-size: 1em;
     color: #1c1c1c;
-    padding-right: .5em;
-    margin-right: .5em;
+    padding: 0 .5em 0 0;
+	border: none;
     border-right: 1px solid #ccc;
 `;
 
@@ -40,12 +40,16 @@ const SearchBar = () => {
     const handleInputChange = e => {
         e.preventDefault();
         setValue(e.target.value);
-    }
+	}
+
+	const handleSubmit = () => {
+		console.log(value);
+	}
     
     return (
         <StyledForm>
             <StyledContainer>
-                <StyledSearchIcon>
+                <StyledSearchIcon onSubmit={handleSubmit}>
                     <FiSearch />
                 </StyledSearchIcon>
                 <StyledSearchBar onChange={handleInputChange} value={value} />

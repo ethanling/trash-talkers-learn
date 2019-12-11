@@ -50,7 +50,7 @@ const StyledNavText= styled.span`
 
 function App() {
 	return (
-		<Router>		
+		<Router onUpdate={() => window.scrollTo(0,0)}>		
 			<StyledApp>
 				<Switch>
 					<Route path="/search">
