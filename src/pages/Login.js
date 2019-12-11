@@ -3,9 +3,22 @@ import styled from 'styled-components';
 import { withRouter, Redirect } from "react-router";
 import appAuth from "../authentication/config.js";
 import { AuthContext } from "../authentication/Auth.js";
+import Header from '../components/Header';
+import { StyledPageContainer } from '../styles/Global';
 
-const StyledLoginWrapper = styled.div`
-    
+const StyledWrapper = styled.div`
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background: #0a0a0a;
+    width: 80vw;
+    padding-top: 2em;
+`;
+
+const StyledLoginForm = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const Login = ({ history }) => {
@@ -32,24 +45,26 @@ const Login = ({ history }) => {
     }
 
     return (
-        <div>
-            <h1>Log in</h1>
-            <form onSubmit={handleLogin}>
-                <label>
-                    Email
-                    <input name="email" type="email" placeholder="Email" />
-                </label>
-                <label>
-                    Password
-                    <input
-                        name="password"
-                        type="password"
-                        placeholder="Password"
-                    />
-                </label>
-                <button type="submit">Log in</button>
-            </form>
-        </div>
+        <StyledPageContainer>
+            <StyledWrapper>
+                <Header title="Log In" />
+                <StyledLoginForm onSubmit={handleLogin}>
+                    <label>
+                        Email
+                        <input name="email" type="email" placeholder="Email" />
+                    </label>
+                    <label>
+                        Password
+                        <input
+                            name="password"
+                            type="password"
+                            placeholder="Password"
+                        />
+                    </label>
+                    <button type="submit">Log in</button>
+                </StyledLoginForm>
+            </StyledWrapper>
+        </StyledPageContainer>
     );
 };
 

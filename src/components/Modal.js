@@ -26,29 +26,11 @@ const StyledModalWrapper = styled.div`
     border-top: 1px solid #000;
 `;
 
-const StyledButton = styled.button`
-    background: none;
-    font-size: 1em;
-    /* font-weight: bold; */
-    padding: 10px 20px 10px 20px;
-    color: #fafafa;
-    border: 2px solid #fafafa;
-    border-radius: 24px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all .2s ease;
-
-    :hover {
-        box-shadow: 0 0 10px 0 #000;
-        transform: scale(1.03);
-    }
-`;
-
 const Modal = ({ children, toggle }) => {
     return (
         <StyledShade onClick={toggle}>
             <StyledModalWrapper>
-                <StyledButton>Sign Out</StyledButton>
+                { children }
             </StyledModalWrapper>
         </StyledShade>
     )
