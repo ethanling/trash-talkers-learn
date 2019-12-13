@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from './authentication/Auth';
@@ -23,6 +23,10 @@ const StyledApp = styled.div`
 `;
 
 function App() {
+	const [hide, setHide] = useState(false);
+
+	const hideNav = () => setHide(!hide);
+
 	return (
         <AuthProvider>
             <Router onUpdate={() => window.scrollTo(0, 0)}>
@@ -31,9 +35,9 @@ function App() {
                         <PrivateRoute exact path="/search" component={Search} />
                         <PrivateRoute exact path="/library" component={Library} />
                         <PrivateRoute exact path="/" component={Home} />
-                        <Route exact path="/login" component={Login} />
+                        <Route exact path="/login" component={Login} hideNav={hideNav} />
                     </Switch>
-                    <Nav />
+                    <Nav hide={hide}/>
                 </StyledApp>
             </Router>
         </AuthProvider>
