@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Modal from '../components/Modal';
-import appAuth from '../authentication/config.js'
+import appAuth from '../authentication/config'
 
 const StyledButton = styled.button`
     background: none;
@@ -23,10 +23,14 @@ const StyledButton = styled.button`
 
 const Settings = ({ toggle }) => {
 
+    const handleSignOut = () => {
+        console.log("signed out");
+        appAuth.auth().signOut();
+    }
 
     return (
         <Modal toggle={toggle}>
-            <StyledButton onClick={() => appAuth.auth().signOut()}>
+            <StyledButton onClick={ handleSignOut}>
                 Sign Out
             </StyledButton>
         </Modal>

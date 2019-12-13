@@ -24,10 +24,11 @@ const StyledSearchBar = styled.input`
     font-size: 1em;
     flex: 1;
     background-color: #fafafa;
+    padding-left: 8px;
 `;
 
 const StyledSearchIcon = styled.button`
-    background: none;
+    background: #fafafa;
     font-size: 1em;
     color: #1c1c1c;
     padding: 0 .5em 0 0;

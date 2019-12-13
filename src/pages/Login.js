@@ -5,20 +5,14 @@ import appAuth from "../authentication/config.js";
 import { AuthContext } from "../authentication/Auth.js";
 import Header from '../components/Header';
 import { StyledPageContainer } from '../styles/Global';
+import LoginForm from '../components/LoginForm';
 
 const StyledWrapper = styled.div`
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    background: #0a0a0a;
-    width: 80vw;
-    padding-top: 2em;
-`;
-
-const StyledLoginForm = styled.div`
     display: flex;
+    max-width: 100vw;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    margin-top: 2em;
 `;
 
 const Login = ({ history }) => {
@@ -46,23 +40,9 @@ const Login = ({ history }) => {
 
     return (
         <StyledPageContainer>
+            <Header title="Log In" />
             <StyledWrapper>
-                <Header title="Log In" />
-                <StyledLoginForm onSubmit={handleLogin}>
-                    <label>
-                        Email
-                        <input name="email" type="email" placeholder="Email" />
-                    </label>
-                    <label>
-                        Password
-                        <input
-                            name="password"
-                            type="password"
-                            placeholder="Password"
-                        />
-                    </label>
-                    <button type="submit">Log in</button>
-                </StyledLoginForm>
+                <LoginForm action={handleLogin} />
             </StyledWrapper>
         </StyledPageContainer>
     );

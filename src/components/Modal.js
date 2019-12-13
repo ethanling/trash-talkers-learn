@@ -1,24 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledShade = styled.div`
+const StyledWrapper = styled.div`
     z-index: 8;
     height: 100vh;
     width: 100vw;
-    background: rgba(0, 0, 0, .85);
-    position: absolute;
-    bottom: 0;
-    left: 0;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+`;
+
+const StyledShade = styled.div`
+    width: 100%;
+    flex: 1;
+    background: rgba(0, 0, 0, .9);
 `;
 
 const StyledModalWrapper = styled.div`
     z-index: 9;
     width: 100vw;
     background-color: #1c1c1c;
-    box-shadow; 0 0 10px 0 #000;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -28,12 +33,11 @@ const StyledModalWrapper = styled.div`
 
 const Modal = ({ children, toggle }) => {
     return (
-        <StyledShade onClick={toggle}>
-            <StyledModalWrapper>
-                { children }
-            </StyledModalWrapper>
-        </StyledShade>
-    )
+        <StyledWrapper>
+            <StyledShade onClick={toggle} />
+            <StyledModalWrapper>{children}</StyledModalWrapper>
+        </StyledWrapper>
+    );
 }
 
 export default Modal;
