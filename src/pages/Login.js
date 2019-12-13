@@ -43,6 +43,7 @@ const Login = ({ history }) => {
             <Header title="Log In" />
             <StyledWrapper>
                 <LoginForm action={handleLogin} />
+                <a>Don't have an account?</a>
             </StyledWrapper>
         </StyledPageContainer>
     );

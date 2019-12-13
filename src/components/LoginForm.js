@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../components/Button'
 
 const StyledLoginForm = styled.form`
     
@@ -32,20 +33,29 @@ const StyledLabel = styled.label`
     margin-bottom: 1em;
 `;
 
-const StyledButton = styled.button``;
-
 const LoginForm = ({ action }) => {
     return (
         <StyledLoginForm onSubmit={action}>
             <StyledRow>
                 <StyledLabel>Email</StyledLabel>
-                <StyledInput name="email" type="email" placeholder="me@example.com" />
+                <StyledInput
+                    name="email"
+                    type="email"
+                    placeholder="me@example.com"
+                />
             </StyledRow>
             <StyledRow>
                 <StyledLabel>Password</StyledLabel>
-                <StyledInput name="password" type="password" placeholder="password" />
+                <StyledInput
+                    name="password"
+                    type="password"
+                    placeholder="password"
+                />
             </StyledRow>
-            <button type="submit">Log in</button>
+            <br />
+            <StyledRow>
+                <Button type="submit" text="Log In" />
+            </StyledRow>
         </StyledLoginForm>
     );
 };

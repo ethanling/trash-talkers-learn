@@ -6,11 +6,15 @@ export const AuthContext = React.createContext();
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(false);
-
+    
     useEffect(() => {
         appAuth.auth().onAuthStateChanged(setCurrentUser);
-        currentUser ? (setLoading(false)) : (setLoading(true));
+        foo();
     }, []);
+
+    const foo = () => {
+        console.log(currentUser)
+    }
 
     return (
         <AuthContext.Provider
