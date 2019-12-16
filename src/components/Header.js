@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
+import { AuthContext } from "../authentication/Auth";
 import { FiSettings } from 'react-icons/fi'
 import Settings from '../pages/Settings';
 
@@ -36,18 +37,27 @@ const StyledTitle = styled.h1`
 
 
 const Header = ({ title }) => {
+    const { currentUser } = useContext(AuthContext);
     const [toggle, setToggle] = useState(false);
     const toggleSettings = () => setToggle(!toggle)
     
-    return (
-		<StyledHeader>
-			<StyledTitle>{ title }</StyledTitle>
-			<StyledSettingsIcon onClick={toggleSettings}>		
-				<FiSettings />	
-			</StyledSettingsIcon>
-            { toggle ? <Settings toggle={toggleSettings} /> : ('')}
-		</StyledHeader>
-	)
+    if (currentUser) {
+        return (
+            <StyledHeader>
+                <StyledTitle>{ title }</StyledTitle>
+                    <StyledSettingsIcon onClick={toggleSettings}>		
+                        <FiSettings />	
+                    </StyledSettingsIcon>
+                    <Settings toggle={toggle} action={toggleSettings} />
+            </StyledHeader>
+	    )
+    } else {
+        return (
+            <StyledHeader>
+                <StyledTitle>{title}</StyledTitle>
+            </StyledHeader>
+        );   
+    }
 }
 
 export default Header;

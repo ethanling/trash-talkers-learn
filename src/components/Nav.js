@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router,Link } from 'react-router-dom';
-// Icons
-import { FiHome, FiSearch, FiList } from 'react-icons/fi'
+import { AuthContext } from "../authentication/Auth";
+import { FiHome, FiSearch, FiList, FiKey } from 'react-icons/fi'
 
 const StyledNav = styled.div`
 	min-height: 65px;
@@ -48,20 +48,31 @@ const StyledNavText = styled.span`
 
 
 const Nav = () => {
-	return (
+    const { currentUser } = useContext(AuthContext);
+
+    return (
         <StyledNav>
-            <StyledLink to="/">
-                <FiHome />
-                <StyledNavText>Home</StyledNavText>
-            </StyledLink>
-            <StyledLink to="/search">
-                <FiSearch />
-                <StyledNavText>Search</StyledNavText>
-            </StyledLink>
-            <StyledLink to="/library">
-                <FiList />
-                <StyledNavText>Library</StyledNavText>
-            </StyledLink>
+            { currentUser ? (
+                <>
+                    <StyledLink to="/">
+                        <FiHome />
+                        <StyledNavText>Home</StyledNavText>
+                    </StyledLink>
+                    <StyledLink to="/search">
+                        <FiSearch />
+                        <StyledNavText>Search</StyledNavText>
+                    </StyledLink>
+                    <StyledLink to="/library">
+                        <FiList />
+                        <StyledNavText>Library</StyledNavText>
+                    </StyledLink>
+                </>
+            ) : (
+                <StyledLink to="/login">
+                    <FiKey />
+                    <StyledNavText>Login</StyledNavText>
+                </StyledLink>
+            ) }
         </StyledNav>
     );
 }

@@ -1,6 +1,7 @@
 import React, { useCallback, useContext } from "react";
 import styled from 'styled-components';
 import { withRouter, Redirect } from "react-router";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import appAuth from "../authentication/config.js";
 import { AuthContext } from "../authentication/Auth.js";
 import Header from '../components/Header';
@@ -13,6 +14,22 @@ const StyledWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     margin-top: 2em;
+`;
+
+const StyledLinkContainer = styled.div`
+    padding: 2em;
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: underline;
+    color: #fafafa;
+    display: block;
+    margin-bottom: 1em;
+    font-size: .85em;
+
+    :visited {
+        color: #fafafa;
+    }
 `;
 
 const Login = ({ history }) => {
@@ -32,18 +49,27 @@ const Login = ({ history }) => {
         [history]
     );
 
-    const { currentUser } = useContext(AuthContext);
+    const { currentUser, loading } = useContext(AuthContext);
 
     if (currentUser) {
         return <Redirect to="/" />;
     }
+
+
 
     return (
         <StyledPageContainer>
             <Header title="Log In" />
             <StyledWrapper>
                 <LoginForm action={handleLogin} />
-                <a>Don't have an account?</a>
+                <StyledLinkContainer>
+                    <StyledLink to="/sign-up">
+                        Don't have an account?
+                    </StyledLink>
+                    <StyledLink to="/reset-password">
+                        Can't sign in?
+                    </StyledLink>
+                </StyledLinkContainer>
             </StyledWrapper>
         </StyledPageContainer>
     );

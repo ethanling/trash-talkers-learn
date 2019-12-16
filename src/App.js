@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Search from './pages/Search';
 import Library from './pages/Library';
 import Login from './pages/Login';
+import SignUp from './pages/SignUp'
 // Components
 import Nav from './components/Nav';
 
@@ -32,6 +33,7 @@ function App() {
                         <PrivateRoute exact path="/library" component={Library} />
                         <PrivateRoute exact path="/" component={Home} />
                         <Route exact path="/login" component={Login} />
+                        <Route exact path="/sign-up" component={SignUp} />
                     </Switch>
                     <Nav />
                 </StyledApp>

@@ -5,7 +5,7 @@ import appAuth from '../authentication/config'
 
 
 
-const Settings = ({ toggle }) => {
+const Settings = ({ toggle, action }) => {
 
     const handleSignOut = () => {
         console.log("signed out");
@@ -13,8 +13,8 @@ const Settings = ({ toggle }) => {
     }
 
     return (
-        <Modal toggle={toggle}>
-            <Button action={ handleSignOut} text='Sign Out' />
+        <Modal toggle={toggle} action={action}>
+            <Button action={ handleSignOut } text='Sign Out' />
         </Modal>
     );
 }
