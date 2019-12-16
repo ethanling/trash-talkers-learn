@@ -128,7 +128,12 @@ const ScrollView = ({ videos, team }) => {
 			</StyledScrollTitle>
 			<StyledScrollView>
                 { testArr.map((card, i) => (
-                    <Card key={i} title={card.title} description={card.desciption} thumbnail_link={card.thumbnail_link} />
+                    <Card 
+                        key={i} 
+                        title={card.title} 
+                        description={card.desciption} 
+                        thumbnail_link={card.thumbnail_link}
+                    />
                 ))}
 			</StyledScrollView>		
 		</StyledWrapper>
