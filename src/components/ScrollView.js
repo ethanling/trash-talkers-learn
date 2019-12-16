@@ -1,45 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const testArr = [
-    {
-        title: "Video 1",
-        desciption: "A cool video that is cool.",
-        thumbnail_link: "https://via.placeholder.com/200"
-    },
-    {
-        title: "Video 2",
-        desciption: "A cool video that is cool.",
-        thumbnail_link: "https://via.placeholder.com/200"
-    },
-    {
-        title: "Video 3",
-        desciption: "A cool video that is cool.",
-        thumbnail_link: "https://via.placeholder.com/200"
-    },
-    {
-        title: "Video 4",
-        desciption: "A cool video that is cool.",
-        thumbnail_link: "https://via.placeholder.com/200"
-    },
-    {
-        title: "Video 5",
-        desciption: "A cool video that is cool.",
-        thumbnail_link: "https://via.placeholder.com/200"
-    },
-    {
-        title: "Video 6",
-        desciption: "A cool video that is cool.",
-        thumbnail_link: "https://via.placeholder.com/200"
-    },
-    {
-        title: "Video 7",
-        desciption: "A cool video that is cool.",
-        thumbnail_link: "https://via.placeholder.com/200"
-    }
-];
-
-
 const StyledWrapper = styled.div`
 	padding: 1em 0 0 0;
 `;
@@ -104,7 +65,7 @@ const Card = ({ title, description, thumbnail_link }) => {
     );
 }
 
-const ScrollView = ({ videos, team }) => {
+const ScrollView = ({ contentArr, team }) => {
 
 	const StyledTeamLabel = styled.span`
 		font-size: .7em;
@@ -127,7 +88,7 @@ const ScrollView = ({ videos, team }) => {
 				)}
 			</StyledScrollTitle>
 			<StyledScrollView>
-                { testArr.map((card, i) => (
+                { contentArr.map((card, i) => (
                     <Card 
                         key={i} 
                         title={card.title} 

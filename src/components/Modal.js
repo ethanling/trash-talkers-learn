@@ -8,7 +8,7 @@ const Modal = ({ children, toggle, action }) => {
     })
 
     const growHeight = useSpring({
-        height: toggle ? "20vh" : "0vh",
+        height: toggle ? "180px" : "0px",
         paddingTop: toggle ? '30px' : '0px'
     });
 
@@ -24,6 +24,7 @@ const Modal = ({ children, toggle, action }) => {
         left: 0;
         opacity: 1;
         height: 100vh;
+        display: ${toggle ? 'flex': 'none'};
     `;
 
     const StyledShade = styled(animated.div)`
