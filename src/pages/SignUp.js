@@ -11,6 +11,9 @@ const SignUp = () => {
     return (
         <StyledPageContainer>
             <Header title="Sign Up" />
+            <StyledWrapper>
+                Sign Up
+            </StyledWrapper>
         </StyledPageContainer>
     );
 };

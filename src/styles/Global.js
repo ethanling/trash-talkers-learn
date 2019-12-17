@@ -11,3 +11,7 @@ export const StyledPageContainer = styled.div`
     flex-direction: column;
     align-items: center; */
 `;
+
+export const StyledButton = styled.button`
+    
+`;

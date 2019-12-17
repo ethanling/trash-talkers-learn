@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from './authentication/Auth';
@@ -24,8 +24,6 @@ const StyledApp = styled.div`
 `;
 
 function App() {
-	const [hide, setHide] = useState(false);
-
 	return (
         <AuthProvider>
             <Router onUpdate={() => window.scrollTo(0, 0)}>
