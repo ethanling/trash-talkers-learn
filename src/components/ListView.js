@@ -8,12 +8,12 @@ const StyledList = styled.ul`
 `;
 
 const StyledListTitle = styled.li`
-    font-size: 0.9em;
+	color: #ccc;
+	font-size: 1.4em;
     text-transform: uppercase;
     font-weight: bold;
+	margin-bottom: .7em;
     display: block;
-    background: rgba(0, 0, 0, 1);
-    padding: 10px 12px 10px 12px;
 `;
 
 const StyledListItem = styled.li`
